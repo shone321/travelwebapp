@@ -1,0 +1,214 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>WanderLustHub</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		<noscript><link rel="stylesheet" href="{% static 'assets/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Welcome</a></li>
+							<li><a href="#one">Who we offer</a></li>
+							<li><a href="#two">What we do</a></li>
+							<li><a href="#three">Get in touch</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Intro -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>WanderLustHub</h1>
+							<p>Discover the world's hidden gems and unforgettable experiences. Your adventure starts here at WanderLustHub.
+						     Unleash your inner explorer with curated travel guides and tips. WanderLustHub—where your journey begins</p>
+							<ul class="actions">
+								<li><a href="{% url 'travelapp:more' %}" class="button scrolly">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<section>
+							<a href="#" class="image"><img src="{% static 'images/iceland.jpg' %}" alt="" data-position="center center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>ICELAND</h2>
+									<p>Iceland is a land of striking contrasts where volcanic landscapes meet icy glaciers and hot springs.</p>
+									<ul class="actions">
+
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="{% static 'images/norway.jpg' %}" alt="" data-position="top center" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>NORWAY</h2>
+									<p>Norway is a country renowned for its stunning natural landscapes, from towering fjords and majestic waterfalls to sweeping glaciers and dense forests.</p>
+									<ul class="actions">
+
+									</ul>
+								</div>
+							</div>
+						</section>
+						<section>
+							<a href="#" class="image"><img src="{% static 'images/scotland.jpg' %}" alt="" data-position="25% 25%" /></a>
+							<div class="content">
+								<div class="inner">
+									<h2>SCOTLAND</h2>
+									<p>Scotland is known for its rugged highlands, historic castles, and rich cultural heritage. </p>
+									<ul class="actions">
+
+									</ul>
+								</div>
+							</div>
+						</section>
+					</section>
+
+				<!-- Two -->
+					<section id="two" class="wrapper style3 fade-up">
+						<div class="inner">
+							<h2>What we do</h2>
+							<p>Curating unforgettable travel experiences through luxurious stays, immersive activities, and personalized adventures tailored to your unique interests.</p>
+
+
+							<div class="features">
+								<section>
+									<img src="{% static 'images/luxury stay.jpg' %}" height="300" width="300">
+									<h3> Luxurious Stays</h3>
+									<p>Indulge in a range of high-end accommodations designed to provide ultimate comfort and relaxation</p>
+								</section>
+								<section>
+									<img src="{% static 'images/guide.jpg' %}" height="300" width="300">
+									<h3> Guided Sightseeing Tours</h3>
+									<p>Discover the highlights of your destination with our expert-led sightseeing tours. Explore iconic landmarks, historical sites, and local attractions, </p>
+								</section>
+								<section>
+									<img src="{% static 'images/outdoor.jpg' %}" height="300" width="300">
+									<h3>outdoor Adventures</h3>
+									<p>For the thrill-seekers and nature lovers, we offer a variety of exhilarating outdoor activities:</p>
+								</section>
+								<section>
+									<img src="{% static 'images/culture.jpeg' %}" height="300" width="300">
+									<h3> Cultural Experiences</h3>
+									<p>Immerse yourself in the local culture with hands-on activities and authentic experiences</p>
+								</section>
+								<section>
+									<img src="{% static 'images/well.jpg' %}" height="300" width="300">
+									<h3>Wellness Retreats</h3>
+									<p>Revitalize your mind and body with our wellness-focused packages</p>
+								</section>
+								<section>
+									<img src="{% static 'images/nature.jpg' %}" height="300" width="300">
+									<h3>Wildlife Safaris & Nature Tours</h3>
+									<p>Experience the wonders of nature and wildlife with our curated tours</p>
+								</section>
+							</div>
+							<ul class="actions">
+								<li><a href="{% url 'travelapp:more' %}" class="button">Learn more</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Get in touch</h2>
+							<p>We'd love to hear from you! Whether you have questions about our services, need assistance with your booking, or want to share your travel experiences, our team is here to help. Feel free to reach out to us through the contact form below, or give us a call. Your adventure begins with a conversation!</p>
+							<div class="split style1">
+								<section>
+									<form method="post" action="{% url 'travelapp:thanks' %}">
+										{% csrf_token %}
+										<div class="fields">
+											<div class="field half">
+												<label for="name">Name</label>
+												<input type="text" name="name" id="name" />
+											</div>
+											<div class="field half">
+												<label for="email">Email</label>
+												<input type="text" name="email" id="email" />
+											</div>
+											<div class="field">
+												<label for="message">Message</label>
+												<textarea name="message" id="message" rows="5"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><a href="{% url 'travelapp:thanks' %}" class="button submit">Send Message</a></li>
+										</ul>
+									</form>
+								</section>
+								<section>
+									<ul class="contact">
+										<li>
+											<h3>Address</h3>
+											<span>12345 Somewhere Road #654<br />
+											Nashville, TN 00000-0000<br />
+											USA</span>
+										</li>
+										<li>
+											<h3>Email</h3>
+											<a href="#">user@untitled.tld</a>
+										</li>
+										<li>
+											<h3>Phone</h3>
+											<span>+91 12345667</span>
+										</li>
+										<li>
+											<h3>Social</h3>
+											<ul class="icons">
+												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+											</ul>
+										</li>
+									</ul>
+								</section>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>
